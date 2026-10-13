@@ -74,13 +74,48 @@ dl.skills dd { margin: 0; }
 .todo { background: color-mix(in srgb, var(--vanilla) 30%, transparent); padding: 0 0.25em; border-radius: 3px; }
 
 /* Timeline */
-.timeline { position: relative; padding-left: 1.6rem; border-left: 2px solid var(--rule); max-width: 42rem; }
-.tl-year { position: relative; font-family: var(--display); font-weight: 600; font-size: 1.2rem; margin: 0 0 0.8rem; }
-.tl-year::before { content: ""; position: absolute; left: calc(-1.6rem - 0.5rem - 3px); top: 0.5rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--link); }
-.tl-item { position: relative; padding: 0 0 1.25rem; }
-.tl-item::before { content: ""; position: absolute; left: calc(-1.6rem - 0.35rem - 3px); top: 0.5rem; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--vanilla); }
-.tl-item p { margin: 0; }
-.tl-date { font-weight: 600; font-size: 0.88rem; color: var(--link); }
+:root {
+  --c-position: #0B6B5F; --c-talk: #9A6700; --c-training: #2F6FBF;
+  --c-outreach: #2F8F4E; --c-community: #7A5BB5; --c-education: #B0446B;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-position: #6FD3C0; --c-talk: #F0B84B; --c-training: #7FB2F0;
+    --c-outreach: #7FD39A; --c-community: #B9A2EA; --c-education: #E49AB5;
+  }
+}
+:root[data-theme="dark"] {
+  --c-position: #6FD3C0; --c-talk: #F0B84B; --c-training: #7FB2F0;
+  --c-outreach: #7FD39A; --c-community: #B9A2EA; --c-education: #E49AB5;
+}
+.content.wide { max-width: 46rem; }
+.tl-intro { color: var(--muted); margin: 0 0 1rem; }
+.tl-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.6rem; }
+.chip { font: inherit; font-size: 0.9rem; font-weight: 600; cursor: pointer; color: var(--ink); background: transparent;
+  border: 1px solid var(--rule); border-radius: 999px; padding: 0.3rem 0.85rem; }
+.chip span { opacity: 0.65; font-weight: 500; margin-left: 0.15rem; }
+.chip:hover { border-color: var(--link); }
+.chip[aria-pressed="true"] { background: var(--link); border-color: var(--link); color: var(--bg); }
+.timeline { position: relative; padding-left: 1.7rem; border-left: 2px solid var(--rule); }
+.timeline [hidden] { display: none !important; }
+.tl-year { position: relative; font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1; margin: 0 0 1rem; }
+.tl-year::before { content: ""; position: absolute; left: calc(-1.7rem - 0.55rem - 3px); top: 0.1rem; width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--ink); }
+.tl-item { --c: var(--link); position: relative; padding: 0 0 1.2rem; }
+.tl-item[data-type="position"] { --c: var(--c-position); }
+.tl-item[data-type="talk"] { --c: var(--c-talk); }
+.tl-item[data-type="training"] { --c: var(--c-training); }
+.tl-item[data-type="outreach"] { --c: var(--c-outreach); }
+.tl-item[data-type="community"] { --c: var(--c-community); }
+.tl-item[data-type="education"] { --c: var(--c-education); }
+.tl-item::before { content: ""; position: absolute; left: calc(-1.7rem - 0.4rem - 3px); top: 0.15rem; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--c); border: 2px solid var(--bg); box-sizing: content-box; }
+.tl-date { font-size: 0.88rem; font-weight: 600; color: var(--muted); margin-bottom: 0.3rem; }
+.tl-card { background: var(--tint); border: 1px solid var(--rule); border-left: 4px solid var(--c); border-radius: 8px; padding: 0.75rem 1rem 0.85rem; }
+.tl-card h3 { font-size: 1.05rem; line-height: 1.35; margin: 0.35rem 0 0.2rem; font-weight: 600; }
+.tl-card p { margin: 0; color: var(--muted); font-size: 0.97rem; line-height: 1.5; }
+.tl-tag { display: inline-block; font-size: 0.78rem; font-weight: 600; color: var(--c); padding: 0.05rem 0.6rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--c) 15%, transparent); }
+.tl-now { display: inline-block; font-size: 0.78rem; font-weight: 600; margin-left: 0.4rem; padding: 0.05rem 0.55rem; border-radius: 999px;
+  background: var(--vanilla); color: #12343B; }
 
 footer { padding: 2.5rem clamp(1.25rem, 5vw, 4rem) 3rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
 

@@ -18,3 +18,20 @@
     svg.appendChild(p);
   }
 })();
+
+(function () {
+  var chips = document.querySelectorAll(".chip[data-filter]");
+  var tl = document.getElementById("timeline");
+  if (!chips.length || !tl) return;
+  function apply(f) {
+    var kids = Array.prototype.slice.call(tl.children), year = null, any = false;
+    function close() { if (year) year.hidden = !any; }
+    kids.forEach(function (el) {
+      if (el.classList.contains("tl-year")) { close(); year = el; any = false; }
+      else { var show = f === "all" || el.getAttribute("data-type") === f; el.hidden = !show; if (show) any = true; }
+    });
+    close();
+    chips.forEach(function (c) { c.setAttribute("aria-pressed", c.getAttribute("data-filter") === f ? "true" : "false"); });
+  }
+  chips.forEach(function (c) { c.addEventListener("click", function () { apply(c.getAttribute("data-filter")); }); });
+})();
