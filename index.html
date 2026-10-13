@@ -4,314 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vatsiniaina Dieudate Ramananaribako</title>
-<meta name="description" content="Earth scientist from Madagascar working on tropical rainfall, convective systems and climate prediction.">
+<meta name="description" content="Climate scientist from Madagascar studying tropical rainfall, cyclones and climate prediction.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #F1F6F4;
-    --ink: #12343B;
-    --muted: #4A6A6B;
-    --rule: #C9D8D5;
-    --link: #0B6B5F;
-    --line: #2FA08E;
-    --vanilla: #E3B23C;
-    --display: "Fraunces", Georgia, "Times New Roman", serif;
-    --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0F2428; --ink: #E6F0ED; --muted: #9DB8B4; --rule: #25444A;
-      --link: #6FD3C0; --line: #3FB8A4; --vanilla: #F0B84B;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0F2428; --ink: #E6F0ED; --muted: #9DB8B4; --rule: #25444A;
-    --link: #6FD3C0; --line: #3FB8A4; --vanilla: #F0B84B;
-  }
-  *, *::before, *::after { box-sizing: inherit; }
-  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 4.5rem); }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--link); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
-  a:hover { text-decoration-color: var(--vanilla); text-decoration-thickness: 3px; }
-  :focus-visible { outline: 3px solid var(--vanilla); outline-offset: 3px; border-radius: 2px; }
-
-  header.top {
-    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
-    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-    padding: 0.9rem clamp(1.25rem, 5vw, 4rem);
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--rule);
-  }
-  header.top .mark { font-family: var(--display); font-weight: 600; color: var(--ink); text-decoration: none; }
-  nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
-  nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
-  nav a:hover { text-decoration: underline; text-decoration-color: var(--vanilla); text-decoration-thickness: 3px; text-underline-offset: 0.3em; }
-
-  .hero {
-    position: relative; overflow: hidden;
-    min-height: 82vh; display: flex; align-items: center;
-    padding: 4rem clamp(1.25rem, 5vw, 4rem);
-  }
-  .hero .text { position: relative; z-index: 1; max-width: 48rem; }
-  .hero h1 {
-    font-family: var(--display); font-weight: 600; font-variation-settings: "opsz" 144;
-    font-size: clamp(2.8rem, 8.5vw, 6.8rem); line-height: 1; letter-spacing: -0.02em;
-    margin: 0 0 1.75rem;
-  }
-  .hero p.lead { font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.5; color: var(--muted); max-width: 36rem; margin: 0 0 2rem; }
-  .hero .links { display: flex; gap: 1.5rem; flex-wrap: wrap; font-weight: 500; }
-  #contours {
-    position: absolute; right: -8%; top: 50%; width: min(78vw, 46rem); height: auto;
-    transform: translateY(-50%); color: var(--line); opacity: 0.55; pointer-events: none;
-  }
-  #contours path { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.6s ease-out forwards; }
-  @keyframes draw { to { stroke-dashoffset: 0; } }
-  @media (prefers-reduced-motion: reduce) {
-    #contours path { animation: none; stroke-dashoffset: 0; }
-    html { scroll-behavior: auto; }
-  }
-
-  main section {
-    display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 1rem 3rem;
-    padding: 3.5rem clamp(1.25rem, 5vw, 4rem);
-    border-top: 1px solid var(--rule);
-  }
-  main section > h2 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.2; margin: 0; }
-  .content { max-width: 42rem; }
-  .content p { margin: 0 0 1rem; }
-  .entry { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
-  .entry:first-child { padding-top: 0; }
-  .entry:last-child { border-bottom: 0; }
-  .entry h3 { font-size: 1.1rem; margin: 0 0 0.25rem; font-weight: 600; }
-  .entry .when { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.45rem; }
-  .entry p { margin: 0 0 0.5rem; }
-  .entry p:last-child { margin-bottom: 0; }
-  .entry ul { margin: 0.3rem 0 0; padding-left: 1.2rem; }
-  .entry li { margin-bottom: 0.35rem; }
-  dl.skills { margin: 0; display: grid; grid-template-columns: minmax(0, 10rem) minmax(0, 1fr); gap: 0.7rem 1.5rem; }
-  dl.skills dt { font-weight: 600; }
-  dl.skills dd { margin: 0; }
-  .todo { background: color-mix(in srgb, var(--vanilla) 30%, transparent); padding: 0 0.25em; border-radius: 3px; }
-
-  footer { padding: 2.5rem clamp(1.25rem, 5vw, 4rem) 3rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
-
-  @media (max-width: 720px) {
-    main section { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-    dl.skills { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
-    dl.skills dd { margin-bottom: 0.8rem; }
-    .hero { min-height: 72vh; }
-    #contours { right: -35%; width: 120vw; opacity: 0.4; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header class="top">
-  <a class="mark" href="#top">V. D. Ramananaribako</a>
-  <nav aria-label="Main">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#experience">Experience</a>
-    <a href="#training">Training</a>
-    <a href="#outreach">Outreach</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <a class="mark" href="index.html">V. D. Ramananaribako</a>
+  <nav aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="research.html">Research</a><a href="publications.html">Talks and publications</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav>
 </header>
 
-<div class="hero" id="top">
+<div class="hero">
   <svg id="contours" viewBox="-300 -300 600 600" aria-hidden="true" focusable="false"></svg>
-  <div class="text">
-    <h1>Vatsiniaina Dieudate Ramananaribako</h1>
-    <p class="lead">Earth scientist from Madagascar. I study tropical rainfall, convective systems and climate prediction in data-scarce regions, using statistics and machine learning.</p>
-    <div class="links">
-      <a href="#research">My research</a>
-      <a href="#contact">Get in touch</a>
+  <div class="grid">
+    <div>
+      <h1>Vatsiniaina Dieudate Ramananaribako</h1>
+      <p class="lead">Climate scientist from Madagascar. I study tropical rainfall, cyclones and convective systems in the Southwest Indian Ocean, and how statistics and machine learning can improve forecasts and early warning.</p>
+      <div class="links"><a href="research.html">My research</a><a href="contact.html">Get in touch</a></div>
     </div>
+    <div class="photo"><img src="photo.jpg" alt="Portrait of Vatsiniaina Dieudate Ramananaribako" onerror="this.remove()"></div>
   </div>
 </div>
-
 <main>
-  <section id="about">
+  <section>
     <h2>About</h2>
     <div class="content">
-      <p>I hold an M.Sc. in Earth Sciences (very good distinction) from the Institute and Observatory of Geophysics of Antananarivo (IOGA), University of Antananarivo. My thesis analysed how rainfall varies from year to year across Madagascar's climatic zones and what drives it.</p>
+      <p>I hold an M.Sc. in Earth Sciences (very good distinction) from the Institute and Observatory of Geophysics of Antananarivo (IOGA), University of Antananarivo. My thesis analysed how rainfall varies from year to year across Madagascar's climatic zones and which large-scale climate modes drive it.</p>
       <p>I am now a trainee researcher in the ALBATROSS International Mentoring Programme, working on sub-seasonal rainfall prediction for early warning in south-west Madagascar. I also teach and speak about climate science to students and professionals.</p>
-      <p>I work in Malagasy, French and English.</p>
     </div>
   </section>
-
-  <section id="research">
-    <h2>Research interests</h2>
+  <section>
+    <h2>Explore</h2>
     <div class="content">
-      <div class="entry">
-        <h3>Mesoscale convective systems and coastal convection</h3>
-        <p>Their organization, their contribution to rainfall and their variability across timescales, with a focus on the Southwest Indian Ocean and Madagascar.</p>
-      </div>
-      <div class="entry">
-        <h3>Tropical cyclones and rainfall impacts</h3>
-        <p>How cyclones and their environments shape rainfall extremes and regional climate risk.</p>
-      </div>
-      <div class="entry">
-        <h3>Rainfall variability and prediction with statistics and AI</h3>
-        <p>Observational analysis of interannual to sub-seasonal variability using satellite and reanalysis data, and machine learning to improve forecasts and early-warning information.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <h2>Research experience</h2>
-    <div class="content">
-      <div class="entry">
-        <h3>Trainee Researcher, sub-seasonal climate prediction</h3>
-        <p class="when">ALBATROSS International Mentoring Programme (remote), October 2025 to present</p>
-        <p>Mentors: Prof. Franco Molteni and Dr. Gilbert Ouma.</p>
-        <ul>
-          <li>Designing a project on sub-seasonal prediction of rainy-season onset and end, and of dry and wet spells, in Morondava (south-west Madagascar) for early warning.</li>
-          <li>Linking large-scale forcing (MJO, Kelvin waves, subtropical anticyclones) to local rainfall.</li>
-          <li>Applying probabilistic forecast verification to measure skill where data are sparse.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <h3>Master's research: rainfall variability and drivers across Madagascar</h3>
-        <p class="when">IOGA, University of Antananarivo, July 2023 to July 2024</p>
-        <p>Supervisors: Prof. Rondrotiana Barimalala and Dr. Hoby Razafindrakoto.</p>
-        <ul>
-          <li>Used CHIRPS, ERA5, HadISST and GEBCO data with Python and CDO to define five climatic zones (Southwest, East, Central, West, North).</li>
-          <li>Defined wet and dry seasons for each region and measured variability with standardized anomalies, trends and correlations. Found a significant decline in precipitation.</li>
-          <li>Studied how ENSO, the Indian Ocean Dipole, the Indian Ocean Subtropical Dipole, the Mascarene High and the Mozambique Channel Trough influence extreme wet and dry years.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <h3>Machine learning for climate: projects</h3>
-        <p class="when">Climate Change AI Virtual Summer School, July to August 2026</p>
-        <ul>
-          <li><strong>Flood mapping:</strong> a PyTorch CNN mapping surface water from Sentinel-1 radar images, checked with IoU, F1, precision and recall.</li>
-          <li><strong>Downscaling:</strong> a convolutional network (DeepESD) that downscales daily precipitation, with extremes (P98, RX1day) evaluated beyond RMSE.</li>
-          <li><strong>Streamflow:</strong> LSTM models on the CAMELS dataset, tested on an unseen basin.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="publications">
-    <h2>Talks and publications</h2>
-    <div class="content">
-      <div class="entry">
-        <h3>Open Workshop on Understanding and Predicting Annual to Multi-Decadal Climate Variations</h3>
-        <p class="when">CLIVAR, online, November 2025</p>
-        <p>Analysis of the interannual variability of precipitation and its driving mechanism in the southern part of Madagascar.</p>
-      </div>
-      <div class="entry">
-        <h3>Scientific Day of the University of Antananarivo</h3>
-        <p class="when">Oral presentation, December 2024</p>
-        <p>Ramananaribako, V. D., Barimalala, R., &amp; Razafindrakoto, H. N. T. (2025). Analyse de la variabilité interannuelle de la précipitation dans les différentes zones climatiques de Madagascar. <em>RSJ Scientific Journal</em>, 7, 24. <a href="https://doi.org/10.46857/rsj.2025.7">https://doi.org/10.46857/rsj.2025.7</a></p>
-      </div>
-      <div class="entry">
-        <h3>Article in preparation</h3>
-        <p>Analysis of the interannual variability of precipitation in the different climate regions of Madagascar.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="training">
-    <h2>Education and training</h2>
-    <div class="content">
-      <div class="entry">
-        <h3>M.Sc. in Earth Sciences, very good distinction</h3>
-        <p class="when">IOGA, University of Antananarivo, July 2024</p>
-        <p>Thesis: interannual rainfall variability across Madagascar's climatic zones and its large-scale drivers.</p>
-      </div>
-      <div class="entry">
-        <h3>B.Sc. in Physics</h3>
-        <p class="when">Faculty of Science, University of Antananarivo, July 2021</p>
-      </div>
-      <div class="entry">
-        <h3>Courses and workshops</h3>
-        <ul>
-          <li>Climate Change AI Virtual Summer School: Machine Learning for Climate (July to August 2026)</li>
-          <li>ALBATROSS Training for Trainers: Basics of Nature-based Solutions (April 2026)</li>
-          <li>ECMWF and Copernicus MOOC: Understanding Climate Data (January 2026)</li>
-          <li>REPRESA Workshop on Climate Storylines, Ampefy (May 2025)</li>
-          <li>SARCOF-30 Southern African Regional Climate Outlook Forum, Antananarivo (January 2025)</li>
-          <li>Data Science and Mathematical Optimisation; Data Analysis and Visualisation, IOGA (October 2023)</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <dl class="skills">
-          <dt>Data analysis</dt><dd>Python (NumPy, Pandas, SciPy, Scikit-learn, xarray, Matplotlib), MATLAB, CDO, Bash, PostgreSQL, Gurobi</dd>
-          <dt>Machine learning</dt><dd>PyTorch (CNNs, LSTMs), model evaluation (RMSE, IoU, F1, NSE, P98, RX1day)</dd>
-          <dt>Geospatial</dt><dd>QGIS, Sentinel-1 SAR and Sentinel-2 imagery</dd>
-          <dt>Environments</dt><dd>Linux, Google Colab, Microsoft Office</dd>
-          <dt>Communities</dt><dd>Climate Change AI, Fresh Eyes on CMIP, CTBTO Youth Group, Green Change Association for Climate and Environment</dd>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <section id="outreach">
-    <h2>Teaching and outreach</h2>
-    <div class="content">
-      <div class="entry">
-        <h3>Geology training for tourist guides</h3>
-        <p class="when">National Association of Guides (ANG), Antananarivo, May 2025</p>
-        <p>Sessions on Madagascar's crystalline basement geology for professional guides.</p>
-      </div>
-      <div class="entry">
-        <h3>Earth science and climate change for secondary-school students</h3>
-        <p class="when">Collège Saint Joseph, Fenoarivo, and CEG Ambatomirahavavy, 2024/2025</p>
-        <p>Sessions introducing atmospheric science and climate change.</p>
-      </div>
-      <div class="entry">
-        <h3>Private tutor, high-school physics</h3>
-        <p class="when">Antananarivo, 2019 to 2022</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="content">
-      <p>I am happy to hear about research opportunities, collaborations and mentoring.</p>
-      <p><a href="mailto:ramananaribakovatsiniaina@gmail.com">ramananaribakovatsiniaina@gmail.com</a></p>
-      <p>Antananarivo, Madagascar. Referees available on request.</p>
-      <p><span class="todo">[Add your CV PDF, LinkedIn, Google Scholar or GitHub link here]</span></p>
+      <ul class="pagelist">
+        <li><a href="research.html">Research</a><span>Interests, current work and machine learning projects</span></li>
+        <li><a href="publications.html">Talks and publications</a><span>Conference presentations and papers</span></li>
+        <li><a href="cv.html">CV</a><span>Education, training, skills and outreach</span></li>
+        <li><a href="contact.html">Contact</a><span>Collaboration, mentoring and research opportunities</span></li>
+      </ul>
     </div>
   </section>
 </main>
 
-<footer>Vatsiniaina Dieudate Ramananaribako, Madagascar</footer>
-
-<script>
-  (function () {
-    var svg = document.getElementById("contours");
-    if (!svg) return;
-    var NS = "http://www.w3.org/2000/svg", rings = 11, pts = 160;
-    for (var k = 1; k <= rings; k++) {
-      var base = 26 * k, d = "";
-      for (var i = 0; i <= pts; i++) {
-        var a = (i / pts) * Math.PI * 2;
-        var wob = 1 + 0.10 * Math.sin(3 * a + k * 0.5) + 0.06 * Math.sin(5 * a - k * 0.35) + 0.035 * Math.sin(8 * a + k);
-        var r = base * wob * (1 + 0.04 * k * Math.cos(a - 0.6));
-        var x = (r * Math.cos(a) * 1.08).toFixed(1), y = (r * Math.sin(a)).toFixed(1);
-        d += (i ? "L" : "M") + x + " " + y;
-      }
-      var p = document.createElementNS(NS, "path");
-      p.setAttribute("d", d + "Z");
-      p.setAttribute("pathLength", "1");
-      p.style.animationDelay = (k * 0.16) + "s";
-      svg.appendChild(p);
-    }
-  })();
-</script>
+<footer>Vatsiniaina Dieudate Ramananaribako, climate scientist, Madagascar</footer>
+<script src="script.js"></script>
 </body>
 </html>
