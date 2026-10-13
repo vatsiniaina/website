@@ -73,6 +73,15 @@ dl.skills dd { margin: 0; }
 .pagelist span { display: block; color: var(--muted); }
 .todo { background: color-mix(in srgb, var(--vanilla) 30%, transparent); padding: 0 0.25em; border-radius: 3px; }
 
+/* Timeline */
+.timeline { position: relative; padding-left: 1.6rem; border-left: 2px solid var(--rule); max-width: 42rem; }
+.tl-year { position: relative; font-family: var(--display); font-weight: 600; font-size: 1.2rem; margin: 0 0 0.8rem; }
+.tl-year::before { content: ""; position: absolute; left: calc(-1.6rem - 0.5rem - 3px); top: 0.5rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--link); }
+.tl-item { position: relative; padding: 0 0 1.25rem; }
+.tl-item::before { content: ""; position: absolute; left: calc(-1.6rem - 0.35rem - 3px); top: 0.5rem; width: 0.7rem; height: 0.7rem; border-radius: 50%; background: var(--vanilla); }
+.tl-item p { margin: 0; }
+.tl-date { font-weight: 600; font-size: 0.88rem; color: var(--link); }
+
 footer { padding: 2.5rem clamp(1.25rem, 5vw, 4rem) 3rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
 
 @media (max-width: 760px) {
