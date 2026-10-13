@@ -41,7 +41,7 @@ nav a[aria-current="page"] { border-bottom-color: var(--vanilla); }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { #contours path { animation: none; stroke-dashoffset: 0; } html { scroll-behavior: auto; } }
 
-.photo { position: relative; aspect-ratio: 4 / 5; width: 100%; max-width: 20rem; border-radius: 50%; overflow: hidden; background: var(--tint); border: 1px solid var(--rule); justify-self: end; }
+.photo { position: relative; aspect-ratio: 4 / 5; width: 100%; max-width: 20rem; border-radius: 6px; overflow: hidden; background: var(--tint); border: 1px solid var(--rule); justify-self: end; }
 .photo::before { content: "VD"; position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-weight: 600; font-size: 4rem; color: var(--muted); }
 .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
