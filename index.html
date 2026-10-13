@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vatsiniaina Dieudate</title>
+<title>Vatsiniaina Dieudate Ramananaribako</title>
+<meta name="description" content="Earth scientist from Madagascar working on tropical rainfall, convective systems and climate prediction.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -61,13 +62,13 @@
     min-height: 82vh; display: flex; align-items: center;
     padding: 4rem clamp(1.25rem, 5vw, 4rem);
   }
-  .hero .text { position: relative; z-index: 1; max-width: 46rem; }
+  .hero .text { position: relative; z-index: 1; max-width: 48rem; }
   .hero h1 {
     font-family: var(--display); font-weight: 600; font-variation-settings: "opsz" 144;
-    font-size: clamp(3rem, 9.5vw, 7.5rem); line-height: 0.98; letter-spacing: -0.02em;
+    font-size: clamp(2.8rem, 8.5vw, 6.8rem); line-height: 1; letter-spacing: -0.02em;
     margin: 0 0 1.75rem;
   }
-  .hero p.lead { font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.5; color: var(--muted); max-width: 34rem; margin: 0 0 2rem; }
+  .hero p.lead { font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.5; color: var(--muted); max-width: 36rem; margin: 0 0 2rem; }
   .hero .links { display: flex; gap: 1.5rem; flex-wrap: wrap; font-weight: 500; }
   #contours {
     position: absolute; right: -8%; top: 50%; width: min(78vw, 46rem); height: auto;
@@ -86,15 +87,18 @@
     border-top: 1px solid var(--rule);
   }
   main section > h2 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.2; margin: 0; }
-  .content { max-width: 40rem; }
+  .content { max-width: 42rem; }
   .content p { margin: 0 0 1rem; }
   .entry { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
   .entry:first-child { padding-top: 0; }
   .entry:last-child { border-bottom: 0; }
   .entry h3 { font-size: 1.1rem; margin: 0 0 0.25rem; font-weight: 600; }
-  .entry .when { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.35rem; }
-  .entry p { margin: 0; color: var(--ink); }
-  dl.skills { margin: 0; display: grid; grid-template-columns: minmax(0, 8rem) minmax(0, 1fr); gap: 0.7rem 1.5rem; }
+  .entry .when { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.45rem; }
+  .entry p { margin: 0 0 0.5rem; }
+  .entry p:last-child { margin-bottom: 0; }
+  .entry ul { margin: 0.3rem 0 0; padding-left: 1.2rem; }
+  .entry li { margin-bottom: 0.35rem; }
+  dl.skills { margin: 0; display: grid; grid-template-columns: minmax(0, 10rem) minmax(0, 1fr); gap: 0.7rem 1.5rem; }
   dl.skills dt { font-weight: 600; }
   dl.skills dd { margin: 0; }
   .todo { background: color-mix(in srgb, var(--vanilla) 30%, transparent); padding: 0 0.25em; border-radius: 3px; }
@@ -113,12 +117,13 @@
 <body>
 
 <header class="top">
-  <a class="mark" href="#top">Vatsiniaina Dieudate</a>
+  <a class="mark" href="#top">V. D. Ramananaribako</a>
   <nav aria-label="Main">
     <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#background">Background</a>
-    <a href="#writing">Writing</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#training">Training</a>
+    <a href="#outreach">Outreach</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -126,10 +131,10 @@
 <div class="hero" id="top">
   <svg id="contours" viewBox="-300 -300 600 600" aria-hidden="true" focusable="false"></svg>
   <div class="text">
-    <h1>Vatsiniaina Dieudate</h1>
-    <p class="lead">I live in Madagascar and I'm learning to turn measurements into answers with Python and machine learning.</p>
+    <h1>Vatsiniaina Dieudate Ramananaribako</h1>
+    <p class="lead">Earth scientist from Madagascar. I study tropical rainfall, convective systems and climate prediction in data-scarce regions, using statistics and machine learning.</p>
     <div class="links">
-      <a href="#projects">See my projects</a>
+      <a href="#research">My research</a>
       <a href="#contact">Get in touch</a>
     </div>
   </div>
@@ -139,77 +144,154 @@
   <section id="about">
     <h2>About</h2>
     <div class="content">
-      <p>I'm a student from Madagascar with a strong interest in science and technology. I'm currently building my skills in scientific programming, data analysis and machine learning.</p>
-      <p>I speak Malagasy, French and English. <span class="todo">[Add one or two sentences about what motivates you and what you want to do next.]</span></p>
+      <p>I hold an M.Sc. in Earth Sciences (very good distinction) from the Institute and Observatory of Geophysics of Antananarivo (IOGA), University of Antananarivo. My thesis analysed how rainfall varies from year to year across Madagascar's climatic zones and what drives it.</p>
+      <p>I am now a trainee researcher in the ALBATROSS International Mentoring Programme, working on sub-seasonal rainfall prediction for early warning in south-west Madagascar. I also teach and speak about climate science to students and professionals.</p>
+      <p>I work in Malagasy, French and English.</p>
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
+  <section id="research">
+    <h2>Research interests</h2>
     <div class="content">
       <div class="entry">
-        <h3>Palmer Penguins data exploration</h3>
-        <p class="when">Python, pandas, Matplotlib</p>
-        <p>Cleaning a real dataset, counting missing values, filtering by species and plotting distributions and relationships.</p>
+        <h3>Mesoscale convective systems and coastal convection</h3>
+        <p>Their organization, their contribution to rainfall and their variability across timescales, with a focus on the Southwest Indian Ocean and Madagascar.</p>
       </div>
       <div class="entry">
-        <h3>Storm positions on a map</h3>
-        <p class="when">Python, pandas, Cartopy</p>
-        <p>Checking a messy weather file for duplicates and impossible values, then plotting convective storm positions at a given time.</p>
+        <h3>Tropical cyclones and rainfall impacts</h3>
+        <p>How cyclones and their environments shape rainfall extremes and regional climate risk.</p>
       </div>
       <div class="entry">
-        <h3><span class="todo">[Your next project]</span></h3>
-        <p class="when"><span class="todo">[Tools used]</span></p>
-        <p><span class="todo">[One sentence on what it does and a link to the code or report.]</span></p>
+        <h3>Rainfall variability and prediction with statistics and AI</h3>
+        <p>Observational analysis of interannual to sub-seasonal variability using satellite and reanalysis data, and machine learning to improve forecasts and early-warning information.</p>
       </div>
     </div>
   </section>
 
-  <section id="background">
-    <h2>Background and skills</h2>
+  <section id="experience">
+    <h2>Research experience</h2>
     <div class="content">
       <div class="entry">
-        <h3><span class="todo">[Degree or programme]</span></h3>
-        <p class="when"><span class="todo">[University, years]</span></p>
-        <p><span class="todo">[Main subjects, thesis or research topic.]</span></p>
+        <h3>Trainee Researcher, sub-seasonal climate prediction</h3>
+        <p class="when">ALBATROSS International Mentoring Programme (remote), October 2025 to present</p>
+        <p>Mentors: Prof. Franco Molteni and Dr. Gilbert Ouma.</p>
+        <ul>
+          <li>Designing a project on sub-seasonal prediction of rainy-season onset and end, and of dry and wet spells, in Morondava (south-west Madagascar) for early warning.</li>
+          <li>Linking large-scale forcing (MJO, Kelvin waves, subtropical anticyclones) to local rainfall.</li>
+          <li>Applying probabilistic forecast verification to measure skill where data are sparse.</li>
+        </ul>
       </div>
       <div class="entry">
-        <h3>Python and Machine Learning for scientific research</h3>
-        <p class="when">Workshop, October 2026</p>
-        <p>Lists, dictionaries, functions, working with real data and first plots.</p>
+        <h3>Master's research: rainfall variability and drivers across Madagascar</h3>
+        <p class="when">IOGA, University of Antananarivo, July 2023 to July 2024</p>
+        <p>Supervisors: Prof. Rondrotiana Barimalala and Dr. Hoby Razafindrakoto.</p>
+        <ul>
+          <li>Used CHIRPS, ERA5, HadISST and GEBCO data with Python and CDO to define five climatic zones (Southwest, East, Central, West, North).</li>
+          <li>Defined wet and dry seasons for each region and measured variability with standardized anomalies, trends and correlations. Found a significant decline in precipitation.</li>
+          <li>Studied how ENSO, the Indian Ocean Dipole, the Indian Ocean Subtropical Dipole, the Mascarene High and the Mozambique Channel Trough influence extreme wet and dry years.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Machine learning for climate: projects</h3>
+        <p class="when">Climate Change AI Virtual Summer School, July to August 2026</p>
+        <ul>
+          <li><strong>Flood mapping:</strong> a PyTorch CNN mapping surface water from Sentinel-1 radar images, checked with IoU, F1, precision and recall.</li>
+          <li><strong>Downscaling:</strong> a convolutional network (DeepESD) that downscales daily precipitation, with extremes (P98, RX1day) evaluated beyond RMSE.</li>
+          <li><strong>Streamflow:</strong> LSTM models on the CAMELS dataset, tested on an unseen basin.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Talks and publications</h2>
+    <div class="content">
+      <div class="entry">
+        <h3>Open Workshop on Understanding and Predicting Annual to Multi-Decadal Climate Variations</h3>
+        <p class="when">CLIVAR, online, November 2025</p>
+        <p>Analysis of the interannual variability of precipitation and its driving mechanism in the southern part of Madagascar.</p>
+      </div>
+      <div class="entry">
+        <h3>Scientific Day of the University of Antananarivo</h3>
+        <p class="when">Oral presentation, December 2024</p>
+        <p>Ramananaribako, V. D., Barimalala, R., &amp; Razafindrakoto, H. N. T. (2025). Analyse de la variabilité interannuelle de la précipitation dans les différentes zones climatiques de Madagascar. <em>RSJ Scientific Journal</em>, 7, 24. <a href="https://doi.org/10.46857/rsj.2025.7">https://doi.org/10.46857/rsj.2025.7</a></p>
+      </div>
+      <div class="entry">
+        <h3>Article in preparation</h3>
+        <p>Analysis of the interannual variability of precipitation in the different climate regions of Madagascar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="training">
+    <h2>Education and training</h2>
+    <div class="content">
+      <div class="entry">
+        <h3>M.Sc. in Earth Sciences, very good distinction</h3>
+        <p class="when">IOGA, University of Antananarivo, July 2024</p>
+        <p>Thesis: interannual rainfall variability across Madagascar's climatic zones and its large-scale drivers.</p>
+      </div>
+      <div class="entry">
+        <h3>B.Sc. in Physics</h3>
+        <p class="when">Faculty of Science, University of Antananarivo, July 2021</p>
+      </div>
+      <div class="entry">
+        <h3>Courses and workshops</h3>
+        <ul>
+          <li>Climate Change AI Virtual Summer School: Machine Learning for Climate (July to August 2026)</li>
+          <li>ALBATROSS Training for Trainers: Basics of Nature-based Solutions (April 2026)</li>
+          <li>ECMWF and Copernicus MOOC: Understanding Climate Data (January 2026)</li>
+          <li>REPRESA Workshop on Climate Storylines, Ampefy (May 2025)</li>
+          <li>SARCOF-30 Southern African Regional Climate Outlook Forum, Antananarivo (January 2025)</li>
+          <li>Data Science and Mathematical Optimisation; Data Analysis and Visualisation, IOGA (October 2023)</li>
+        </ul>
       </div>
       <div class="entry">
         <dl class="skills">
-          <dt>Programming</dt><dd>Python, pandas, Matplotlib, Cartopy</dd>
-          <dt>Languages</dt><dd>Malagasy, French, English</dd>
-          <dt>Interests</dt><dd><span class="todo">[Fields you want to work in]</span></dd>
+          <dt>Data analysis</dt><dd>Python (NumPy, Pandas, SciPy, Scikit-learn, xarray, Matplotlib), MATLAB, CDO, Bash, PostgreSQL, Gurobi</dd>
+          <dt>Machine learning</dt><dd>PyTorch (CNNs, LSTMs), model evaluation (RMSE, IoU, F1, NSE, P98, RX1day)</dd>
+          <dt>Geospatial</dt><dd>QGIS, Sentinel-1 SAR and Sentinel-2 imagery</dd>
+          <dt>Environments</dt><dd>Linux, Google Colab, Microsoft Office</dd>
+          <dt>Communities</dt><dd>Climate Change AI, Fresh Eyes on CMIP, CTBTO Youth Group, Green Change Association for Climate and Environment</dd>
         </dl>
       </div>
-      <p><a href="#contact">Ask me for my CV</a> <span class="todo">[or link a PDF here]</span></p>
     </div>
   </section>
 
-  <section id="writing">
-    <h2>Writing</h2>
+  <section id="outreach">
+    <h2>Teaching and outreach</h2>
     <div class="content">
-      <p>Notes on what I learn, in plain language. <span class="todo">[Add your first post title and date here.]</span></p>
+      <div class="entry">
+        <h3>Geology training for tourist guides</h3>
+        <p class="when">National Association of Guides (ANG), Antananarivo, May 2025</p>
+        <p>Sessions on Madagascar's crystalline basement geology for professional guides.</p>
+      </div>
+      <div class="entry">
+        <h3>Earth science and climate change for secondary-school students</h3>
+        <p class="when">Collège Saint Joseph, Fenoarivo, and CEG Ambatomirahavavy, 2024/2025</p>
+        <p>Sessions introducing atmospheric science and climate change.</p>
+      </div>
+      <div class="entry">
+        <h3>Private tutor, high-school physics</h3>
+        <p class="when">Antananarivo, 2019 to 2022</p>
+      </div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <div class="content">
-      <p>I'm happy to hear about research opportunities, collaborations and projects.</p>
-      <p><a href="mailto:your.email@example.com">your.email@example.com</a> <span class="todo">[replace with your email]</span></p>
-      <p><span class="todo">[Add LinkedIn or GitHub link]</span></p>
+      <p>I am happy to hear about research opportunities, collaborations and mentoring.</p>
+      <p><a href="mailto:ramananaribakovatsiniaina@gmail.com">ramananaribakovatsiniaina@gmail.com</a></p>
+      <p>Antananarivo, Madagascar. Referees available on request.</p>
+      <p><span class="todo">[Add your CV PDF, LinkedIn, Google Scholar or GitHub link here]</span></p>
     </div>
   </section>
 </main>
 
-<footer>Vatsiniaina Dieudate, Madagascar</footer>
+<footer>Vatsiniaina Dieudate Ramananaribako, Madagascar</footer>
 
 <script>
-  // Contour lines, drawn once on load
   (function () {
     var svg = document.getElementById("contours");
     if (!svg) return;
