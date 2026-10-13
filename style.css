@@ -22,7 +22,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 a { color: var(--link); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 a:hover { text-decoration-color: var(--vanilla); text-decoration-thickness: 3px; }
-:focus-visible { outline: 3px solid var(--vanilla); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 3px solid var(--vanilla); outline-offset: 3px; border-radius: 50%; }
 
 header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 1rem 2rem; flex-wrap: wrap; padding: 0.9rem clamp(1.25rem, 5vw, 4rem); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
 header.top .mark { font-family: var(--display); font-weight: 600; color: var(--ink); text-decoration: none; }
