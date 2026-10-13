@@ -22,7 +22,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 a { color: var(--link); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 a:hover { text-decoration-color: var(--vanilla); text-decoration-thickness: 3px; }
-:focus-visible { outline: 3px solid var(--vanilla); outline-offset: 3px; border-radius: 50%; }
+:focus-visible { outline: 3px solid var(--vanilla); outline-offset: 3px; border-radius: 2px; }
 
 header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 1rem 2rem; flex-wrap: wrap; padding: 0.9rem clamp(1.25rem, 5vw, 4rem); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
 header.top .mark { font-family: var(--display); font-weight: 600; color: var(--ink); text-decoration: none; }
@@ -41,7 +41,7 @@ nav a[aria-current="page"] { border-bottom-color: var(--vanilla); }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { #contours path { animation: none; stroke-dashoffset: 0; } html { scroll-behavior: auto; } }
 
-.photo { position: relative; aspect-ratio: 4 / 5; width: 100%; max-width: 20rem; border-radius: 6px; overflow: hidden; background: var(--tint); border: 1px solid var(--rule); justify-self: end; }
+.photo { position: relative; aspect-ratio: 4 / 5; width: 100%; max-width: 20rem; border-radius: 50%; overflow: hidden; background: var(--tint); border: 1px solid var(--rule); justify-self: end; }
 .photo::before { content: "VD"; position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-weight: 600; font-size: 4rem; color: var(--muted); }
 .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
