@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vatsiniaina Dieudate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F1F6F4;
+    --ink: #12343B;
+    --muted: #4A6A6B;
+    --rule: #C9D8D5;
+    --link: #0B6B5F;
+    --line: #2FA08E;
+    --vanilla: #E3B23C;
+    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F2428; --ink: #E6F0ED; --muted: #9DB8B4; --rule: #25444A;
+      --link: #6FD3C0; --line: #3FB8A4; --vanilla: #F0B84B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F2428; --ink: #E6F0ED; --muted: #9DB8B4; --rule: #25444A;
+    --link: #6FD3C0; --line: #3FB8A4; --vanilla: #F0B84B;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 4.5rem); }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-color: var(--vanilla); text-decoration-thickness: 3px; }
+  :focus-visible { outline: 3px solid var(--vanilla); outline-offset: 3px; border-radius: 2px; }
+
+  header.top {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    padding: 0.9rem clamp(1.25rem, 5vw, 4rem);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  header.top .mark { font-family: var(--display); font-weight: 600; color: var(--ink); text-decoration: none; }
+  nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+  nav a:hover { text-decoration: underline; text-decoration-color: var(--vanilla); text-decoration-thickness: 3px; text-underline-offset: 0.3em; }
+
+  .hero {
+    position: relative; overflow: hidden;
+    min-height: 82vh; display: flex; align-items: center;
+    padding: 4rem clamp(1.25rem, 5vw, 4rem);
+  }
+  .hero .text { position: relative; z-index: 1; max-width: 46rem; }
+  .hero h1 {
+    font-family: var(--display); font-weight: 600; font-variation-settings: "opsz" 144;
+    font-size: clamp(3rem, 9.5vw, 7.5rem); line-height: 0.98; letter-spacing: -0.02em;
+    margin: 0 0 1.75rem;
+  }
+  .hero p.lead { font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.5; color: var(--muted); max-width: 34rem; margin: 0 0 2rem; }
+  .hero .links { display: flex; gap: 1.5rem; flex-wrap: wrap; font-weight: 500; }
+  #contours {
+    position: absolute; right: -8%; top: 50%; width: min(78vw, 46rem); height: auto;
+    transform: translateY(-50%); color: var(--line); opacity: 0.55; pointer-events: none;
+  }
+  #contours path { fill: none; stroke: currentColor; stroke-width: 1.4; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.6s ease-out forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    #contours path { animation: none; stroke-dashoffset: 0; }
+    html { scroll-behavior: auto; }
+  }
+
+  main section {
+    display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 1rem 3rem;
+    padding: 3.5rem clamp(1.25rem, 5vw, 4rem);
+    border-top: 1px solid var(--rule);
+  }
+  main section > h2 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.2; margin: 0; }
+  .content { max-width: 40rem; }
+  .content p { margin: 0 0 1rem; }
+  .entry { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+  .entry:first-child { padding-top: 0; }
+  .entry:last-child { border-bottom: 0; }
+  .entry h3 { font-size: 1.1rem; margin: 0 0 0.25rem; font-weight: 600; }
+  .entry .when { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.35rem; }
+  .entry p { margin: 0; color: var(--ink); }
+  dl.skills { margin: 0; display: grid; grid-template-columns: minmax(0, 8rem) minmax(0, 1fr); gap: 0.7rem 1.5rem; }
+  dl.skills dt { font-weight: 600; }
+  dl.skills dd { margin: 0; }
+  .todo { background: color-mix(in srgb, var(--vanilla) 30%, transparent); padding: 0 0.25em; border-radius: 3px; }
+
+  footer { padding: 2.5rem clamp(1.25rem, 5vw, 4rem) 3rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 720px) {
+    main section { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+    dl.skills { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+    dl.skills dd { margin-bottom: 0.8rem; }
+    .hero { min-height: 72vh; }
+    #contours { right: -35%; width: 120vw; opacity: 0.4; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="#top">Vatsiniaina Dieudate</a>
+  <nav aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#background">Background</a>
+    <a href="#writing">Writing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero" id="top">
+  <svg id="contours" viewBox="-300 -300 600 600" aria-hidden="true" focusable="false"></svg>
+  <div class="text">
+    <h1>Vatsiniaina Dieudate</h1>
+    <p class="lead">I live in Madagascar and I'm learning to turn measurements into answers with Python and machine learning.</p>
+    <div class="links">
+      <a href="#projects">See my projects</a>
+      <a href="#contact">Get in touch</a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="about">
+    <h2>About</h2>
+    <div class="content">
+      <p>I'm a student from Madagascar with a strong interest in science and technology. I'm currently building my skills in scientific programming, data analysis and machine learning.</p>
+      <p>I speak Malagasy, French and English. <span class="todo">[Add one or two sentences about what motivates you and what you want to do next.]</span></p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="content">
+      <div class="entry">
+        <h3>Palmer Penguins data exploration</h3>
+        <p class="when">Python, pandas, Matplotlib</p>
+        <p>Cleaning a real dataset, counting missing values, filtering by species and plotting distributions and relationships.</p>
+      </div>
+      <div class="entry">
+        <h3>Storm positions on a map</h3>
+        <p class="when">Python, pandas, Cartopy</p>
+        <p>Checking a messy weather file for duplicates and impossible values, then plotting convective storm positions at a given time.</p>
+      </div>
+      <div class="entry">
+        <h3><span class="todo">[Your next project]</span></h3>
+        <p class="when"><span class="todo">[Tools used]</span></p>
+        <p><span class="todo">[One sentence on what it does and a link to the code or report.]</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="background">
+    <h2>Background and skills</h2>
+    <div class="content">
+      <div class="entry">
+        <h3><span class="todo">[Degree or programme]</span></h3>
+        <p class="when"><span class="todo">[University, years]</span></p>
+        <p><span class="todo">[Main subjects, thesis or research topic.]</span></p>
+      </div>
+      <div class="entry">
+        <h3>Python and Machine Learning for scientific research</h3>
+        <p class="when">Workshop, October 2026</p>
+        <p>Lists, dictionaries, functions, working with real data and first plots.</p>
+      </div>
+      <div class="entry">
+        <dl class="skills">
+          <dt>Programming</dt><dd>Python, pandas, Matplotlib, Cartopy</dd>
+          <dt>Languages</dt><dd>Malagasy, French, English</dd>
+          <dt>Interests</dt><dd><span class="todo">[Fields you want to work in]</span></dd>
+        </dl>
+      </div>
+      <p><a href="#contact">Ask me for my CV</a> <span class="todo">[or link a PDF here]</span></p>
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2>Writing</h2>
+    <div class="content">
+      <p>Notes on what I learn, in plain language. <span class="todo">[Add your first post title and date here.]</span></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="content">
+      <p>I'm happy to hear about research opportunities, collaborations and projects.</p>
+      <p><a href="mailto:your.email@example.com">your.email@example.com</a> <span class="todo">[replace with your email]</span></p>
+      <p><span class="todo">[Add LinkedIn or GitHub link]</span></p>
+    </div>
+  </section>
+</main>
+
+<footer>Vatsiniaina Dieudate, Madagascar</footer>
+
+<script>
+  // Contour lines, drawn once on load
+  (function () {
+    var svg = document.getElementById("contours");
+    if (!svg) return;
+    var NS = "http://www.w3.org/2000/svg", rings = 11, pts = 160;
+    for (var k = 1; k <= rings; k++) {
+      var base = 26 * k, d = "";
+      for (var i = 0; i <= pts; i++) {
+        var a = (i / pts) * Math.PI * 2;
+        var wob = 1 + 0.10 * Math.sin(3 * a + k * 0.5) + 0.06 * Math.sin(5 * a - k * 0.35) + 0.035 * Math.sin(8 * a + k);
+        var r = base * wob * (1 + 0.04 * k * Math.cos(a - 0.6));
+        var x = (r * Math.cos(a) * 1.08).toFixed(1), y = (r * Math.sin(a)).toFixed(1);
+        d += (i ? "L" : "M") + x + " " + y;
+      }
+      var p = document.createElementNS(NS, "path");
+      p.setAttribute("d", d + "Z");
+      p.setAttribute("pathLength", "1");
+      p.style.animationDelay = (k * 0.16) + "s";
+      svg.appendChild(p);
+    }
+  })();
+</script>
+</body>
+</html>
